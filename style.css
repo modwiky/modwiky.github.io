@@ -2,7 +2,6 @@
 Solarized Blog Theme
 Light + Automatic Dark Mode
 Minimalist • Writing First
-Mobile-Friendly Edition
 ==================================================== */
 
 /* ----------------------------------------------------
@@ -83,10 +82,10 @@ font-size: 17px;
 line-height: 1.65;
 
 min-height: 100vh;
-max-width: 850px;
+max-width: 900px;
 
 margin: 0 auto;
-padding: 0 clamp(16px, 3vw, 24px);
+padding: 0 clamp(16px, 4vw, 32px);
 
 background: var(--bg);
 color: var(--text);
@@ -96,7 +95,7 @@ text-rendering: optimizeLegibility;
 }
 
 main {
-max-width: 620px;
+max-width: 680px;
 margin: 0 auto;
 }
 
@@ -267,8 +266,6 @@ overflow-x: auto;
 border-radius: 6px;
 
 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-
--webkit-overflow-scrolling: touch;
 }
 
 pre code {
@@ -364,9 +361,7 @@ Prev / Next Navigation
 #nextprev {
 display: flex;
 justify-content: space-between;
-align-items: flex-start;
-
-gap: 1.5rem;
+gap: 1rem;
 
 margin-top: 3rem;
 margin-bottom: 2rem;
@@ -374,8 +369,7 @@ margin-bottom: 2rem;
 
 #prevart,
 #nextart {
-flex: 0 1 48%;
-min-width: 0;
+flex: 1;
 }
 
 #prevart {
@@ -384,15 +378,6 @@ text-align: left;
 
 #nextart {
 text-align: right;
-}
-
-#prevart a,
-#nextart a {
-display: inline-block;
-max-width: 100%;
-
-overflow-wrap: break-word;
-word-break: break-word;
 }
 
 /* ----------------------------------------------------
@@ -461,7 +446,13 @@ overflow-wrap: break-word;
 
 img {
 width: 100%;
+max-width: 100%;
+max-height: none;
 border-radius: 8px;
+}
+
+figure {
+margin: 1.5rem 0;
 }
 
 blockquote {
@@ -470,11 +461,41 @@ margin-left: 0;
 margin-right: 0;
 }
 
+pre {
+padding: 1rem;
+font-size: 0.9rem;
+border-radius: 8px;
+
+```
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+```
+
+}
+
+code {
+word-break: break-word;
+}
+
 table {
 display: block;
 overflow-x: auto;
 white-space: nowrap;
+
+```
 -webkit-overflow-scrolling: touch;
+```
+
+}
+
+#nextprev {
+flex-direction: column;
+gap: 1.25rem;
+}
+
+#prevart,
+#nextart {
+text-align: left;
 }
 
 .footnotes {
